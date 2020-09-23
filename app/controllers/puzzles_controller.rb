@@ -15,14 +15,9 @@ class PuzzlesController < ApplicationController
         render json: PuzzleSerializer.new(puzzles)
     end
 
-    def destroy
-        puzzle = Puzzle.find_by(:id params[:id])
-        puzzle.destroy
-    end
-
 private
 
     def puzzle_params
-        params.require(:puzzle).permit(:number_of_syllables)
+        params.require(:puzzle).permit(:question, :solution, :number_of_syllables)
     end
 end
