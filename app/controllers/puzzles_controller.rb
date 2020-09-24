@@ -7,17 +7,17 @@ class PuzzlesController < ApplicationController
 
     def create
         puzzle = Puzzle.create(puzzle_params)
-        render json: PuzzleSerializer.new(puzzles)
+        render json: PuzzleSerializer.new(puzzle)
     end
 
     def show
         puzzle = Puzzle.find_by(id: params[:id])
-        render json: PuzzleSerializer.new(puzzles)
+        render json: PuzzleSerializer.new(puzzle)
     end
 
 private
 
     def puzzle_params
-        params.require(:puzzle).permit(:question, :solution, :number_of_syllables)
+        params.require(:puzzle).permit(:question, :solution)
     end
 end
