@@ -15,9 +15,9 @@ class PuzzlesController < ApplicationController
         render json: PuzzleSerializer.new(puzzle)
     end
 
-private
+    private
 
     def puzzle_params
-        params.require(:puzzle).permit(:question, :solution)
+        params.require(:puzzle).permit(:question, :solution, :number_of_syllables)
     end
 end

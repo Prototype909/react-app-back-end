@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_09_23_001244) do
   create_table "puzzles", force: :cascade do |t|
     t.string "question"
     t.string "solution"
+    t.integer "number_of_syllables"
   end
 
 end
